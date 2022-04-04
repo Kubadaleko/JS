@@ -45,11 +45,19 @@
 
       document.body.addEventListener("mouseover", (e) => {
         const starsContainer = e.target;
-        if (e.target.tagName !== "I") {
+        if (!e.target.classList.contains('fas')) {
           return;
         }
         starsContainer.classList.add("golden");
-        console.log(starsContainer.tagName);
+        console.log(e.target.classList.contains);
+        let star = e.target;
+        do {
+          // красим звезду
+          star.classList.add("golden");
+          // Берем предыдущую звезду
+          star = star.previousElementSibling;
+          // Если предыдущая есть, то запускаем цикл еще раз.
+        } while (star);
       });
 
       // не сделал для всех звезд слева!!! Сделал аналогично через for, но опять-же
@@ -62,10 +70,19 @@
 
       document.body.addEventListener("mouseout", (e) => {
         const starsContainer = e.target;
-        if (starsContainer.tagName !== "I") {
+        console.log(starsContainer);
+        if (!e.target.classList.contains('fas')) {
           return;
         }
         starsContainer.classList.remove("golden");
+        let star = e.target;
+        do {
+          // красим звезду
+          star.classList.remove("golden");
+          // Берем предыдущую звезду
+          star = star.previousElementSibling;
+          // Если предыдущая есть, то запускаем цикл еще раз.
+        } while (star);
       });
 
       /*
