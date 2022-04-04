@@ -44,7 +44,6 @@
    */
 
       const elem1 = document.querySelectorAll(".productName");
-      console.log(elem1);
       elem1.forEach((el) => (el.style.fontSize = "24px"));
 
       /*
@@ -52,8 +51,7 @@
    */
 
       const elem2 = document.querySelectorAll(".product");
-      console.log(elem2);
-      elem1.forEach((el) => (el.style.marginRight = "50px"));
+      elem1.forEach((el) => el.style.marginRight = "50px");
 
       /*
   3. При клике на кнопку "В корзину" название кнопки должно поменяться на
@@ -61,11 +59,10 @@
    */
 
       const el2 = document.querySelectorAll("button");
-      console.log(el2);
       for (let i = 0; i < el2.length; i++) {
         el2[i].addEventListener("click", function () {
           el2[i].innerText = "Добавлено";
-          el2[i].disabled = "true";
+          el2[i].disabled = true;
         });
       }
 

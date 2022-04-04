@@ -67,8 +67,9 @@
   также должен меняться.
   */
 
-      document.getElementById("from").addEventListener("input", (event) => {
-        document.querySelector("span").textContent = event.target.value;
+    const spanElem = document.querySelector("span");  
+    document.getElementById("from").addEventListener("input", (event) => {
+    spanElem.textContent = event.target.value;
       });
 
       /*
@@ -79,7 +80,7 @@
    */
 
       const message = document.querySelector(".message");
-      document.querySelector("button").addEventListener("click", function () {
+      document.querySelector("button").addEventListener("click", () => {
         message.classList.add("animate__animated", "animate__fadeInLeftBig");
         message.style.visibility = "visible";
       });
@@ -101,7 +102,6 @@
       formTag.addEventListener("submit", (event) => {
         inputTags.forEach((inputTag) => {
           if (inputTag.value === "") {
-            console.log("Заполни форму");
             inputTag.classList.add("error");
             event.preventDefault();
           }
